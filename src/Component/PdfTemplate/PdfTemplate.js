@@ -25,9 +25,9 @@ export class PdfTemplate extends React.PureComponent{
                     <div className='pdfTop-1'>
                         <div style={{maxWidth:'20rem',fontFamily:'Righteous',fontSize:'52px',overflow:'hidden',color:'#F80040'}}>{invoiceDetails.invoiceTitle}</div>
                         <div style={{fontWeight:'bold',lineHeight:'1.5'}}>
-                        <div>Invoice No : {invoiceDetails.invoiceNo}</div>
-                        <div>Date : {invoiceDetails.invoiceDate}</div>
-                        <div>Due Date : {invoiceDetails.invoiceDue}</div>
+                            <div>Invoice No : {invoiceDetails.invoiceNo}</div>
+                            <div>Date : {invoiceDetails.invoiceDate}</div>
+                            <div>Due Date : {invoiceDetails.invoiceDue}</div>
                         </div>
                     </div>
                     <div className='pdfTop-2'>
@@ -92,12 +92,22 @@ export class PdfTemplate extends React.PureComponent{
                 </div>
                 <div className='pdfTableContainer'>
                     <PdfTable/>
-                    <div style={{textAlign:'right',marginTop:'26px',fontSize:'22px',fontWeight:'bold'}}>
-                        <div>
-                            <span style={{fontSize:'22px',fontWeight:'bold',color:'#F80040'}}>Total Amount (₹)</span> : {totalAmount}
+                    <div style={{marginTop:'26px',fontSize:'22px',fontWeight:'bold',display:'flex',minWidth:'100%'}}>
+                        <div style={{minWidth:'50%',maxWidth:'50%'}}>
+                            <div style={{fontSize:'22px',fontWeight:'bold',color:'#F80040'}}>
+                                Descriptions
+                            </div>
+                            <div style={{marginTop:'20px'}}>
+                                {invoiceDetails.invoiceDesc}
+                            </div>
                         </div>
-                        <div>
-                            <span style={{fontSize:'22px',fontWeight:'bold',color:'#F80040'}}>Status</span> : {invoiceDetails.invoiceStatus}
+                        <div style={{minWidth:'50%'}}>
+                            <div style={{textAlign:'right'}}>
+                                <span style={{fontSize:'22px',fontWeight:'bold',color:'#F80040'}}>Total Amount (₹)</span> : {totalAmount}
+                            </div>
+                            <div style={{textAlign:'right'}}>
+                                <span style={{fontSize:'22px',fontWeight:'bold',color:'#F80040'}}>Status</span> : {invoiceDetails.invoiceStatus}
+                            </div>
                         </div>
                     </div>
                 </div>

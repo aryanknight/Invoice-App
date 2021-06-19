@@ -11,7 +11,7 @@
 .pdfContainer-1{
     width: 90%;
     display: flex;
-    margin-top: 200px;
+    margin-top: 300px;
     overflow: hidden;
     flex-direction: column;
     font-family:'Roboto';
@@ -26,7 +26,7 @@
 .pdfTop-1{
     width: 50%;
     max-width: 50%;
-    max-height: 200px;
+    max-height: 250px;
     display: left;
     align-items: center;
     overflow: hidden;
@@ -67,4 +67,9 @@
 .pdfTableContainer{
     min-width: 100%;
     margin-top: 32px;
+}
+
+@page{
+    
+    size : 11.7in  16.5in;
 }

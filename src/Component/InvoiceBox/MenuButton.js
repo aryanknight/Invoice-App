@@ -32,6 +32,11 @@ export default function MenuButton({setStatus}) {
         setTitle('Under Process');
         setAnchorEl(null);
     };
+    const handleClose_4 = (event) => {
+        setStatus('Late');
+        setTitle('Late');
+        setAnchorEl(null);
+    };
 
     return (
     <>
@@ -42,6 +47,7 @@ export default function MenuButton({setStatus}) {
             <MenuItem onClick={handleClose_1} value='Paid' j='kbsd'>Paid</MenuItem>
             <MenuItem onClick={handleClose_2} value='Unpaid'>Unpaid</MenuItem>
             <MenuItem onClick={handleClose_3} value='Under Process'>Under Process</MenuItem>
+            <MenuItem onClick={handleClose_4} value='Under Process'>Late</MenuItem>
         </Menu>
     </>
     )

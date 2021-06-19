@@ -143,6 +143,10 @@
     margin-bottom: 20px;
 }
 
+.Desc{
+    margin-left:40px;
+    width:90%;
+}
 
 
 /* --------------------------------------Media Queries------------------------------------ */
@@ -200,5 +204,15 @@
 
     .generateButtonContainer{
         min-width: 95%;
+    }
+
+    .DescCont{
+        display:flex;
+        justify-content:center;
+    }
+
+    .Desc{
+        margin-left: 0;
+        width:95%;
     }
 }

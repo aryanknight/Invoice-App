@@ -28,7 +28,7 @@ export default function InvoiceBox() {
     const classes=useStyles();
     
 
-    const [invoiceData,setInvoiceData]=useState({invoiceTitle:'Invoice Title', invoiceNo:'',invoiceDate:'',invoiceDue:'',invoiceLogo:'',invoiceStatus:''});
+    const [invoiceData,setInvoiceData]=useState({invoiceTitle:'Invoice Title', invoiceNo:'',invoiceDate:'',invoiceDue:'',invoiceLogo:'',invoiceStatus:'',invoiceDesc:''});
     const [detailsData,setDetailsData]=useState({byName:'',byAddress:'',byEmail:'',toName:'',toAddress:'',toEmail:''});
     const [itemData,setItemData]=useState({itemId:id,itemName:'Pen',itemQuant:1, itemRate:1});
     const [status, setStatus] = useState(null);
@@ -60,14 +60,14 @@ export default function InvoiceBox() {
         dispatch(setItems(itemData));
     }
 
-    const saveData=()=>{
-        dispatch(setInvoice(invoiceData));
-        dispatch(setDetails(detailsData));
+    const saveData= async ()=>{
+        await dispatch(setInvoice(invoiceData));
+        await dispatch(setDetails(detailsData));
         handlePrint();
     }
 
     const clearData = () => {
-        setInvoiceData({invoiceTitle:'Invoice Title', invoiceNo:'',invoiceDate:'',invoiceDue:'',invoiceLogo:''});
+        setInvoiceData({invoiceTitle:'Invoice Title', invoiceNo:'',invoiceDate:'',invoiceDue:'',invoiceLogo:'',invoiceDesc:''});
         setDetailsData({byName:'',byAddress:'',byEmail:'',toName:'',toAddress:'',toEmail:''});
         setItemData({itemId:id,itemName:'Pen',itemQuant:1, itemRate:1});
         dispatch(deleteAll());
@@ -176,6 +176,11 @@ export default function InvoiceBox() {
                         </div>
                     </div>
                     {itemDetails.length !=0 ? <ItemTable />:null}
+                    <div className='DescCont' style={{width:'100%',marginTop:'40px'}}>
+                        <div className='Desc'>
+                            <TextField value={invoiceData.invoiceDesc} multiline fullWidth rows={6} size='small' variant='outlined' label='Descriptions' onChange={(e) => setInvoiceData({...invoiceData,invoiceDesc:e.target.value})}/>
+                        </div>
+                    </div>
                     <div style={{marginTop:'60px',maxWidth:'100%',display:'flex',alignItems:'center',flexDirection:'column'}}>
                         <div className='generateButtonContainer'>
                             <Button color='primary' variant='contained' fullWidth onClick={saveData}>Generate Invoice</Button>
