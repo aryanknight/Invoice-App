@@ -1,24 +1,16 @@
-import logo from './logo.svg';
+import React  from 'react';
 import './App.css';
+import LandingSection from './Component/LandingSection/LandingSection.js';
+import InvoiceBox from './Component/InvoiceBox/InvoiceBox';
 
 function App() {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <LandingSection />
+      <div className='heading' style={{textAlign:'center',marginTop:'40px' ,padding:'0.5rem'}}> Create Your Invoice Now </div>
+      <InvoiceBox />
+    </>  
   );
 }
 
