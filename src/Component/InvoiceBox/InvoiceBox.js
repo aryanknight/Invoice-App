@@ -9,7 +9,7 @@ import { makeStyles} from "@material-ui/core/styles";
 import MenuButton from './MenuButton';
 import ItemTable from '../Table/Table';
 import FileBase64 from 'react-file-base64'; 
-import Logo from '../../Images/addimg.png'
+import Logo from '../../Images/grp10.png'
 import nextId from "react-id-generator";
 import './InvoiceBox.css';
 
