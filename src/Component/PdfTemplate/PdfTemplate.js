@@ -19,7 +19,7 @@ export class PdfTemplate extends React.PureComponent{
             return(null)})
         
         return (
-        <div style={{backgroundImage:`url(${imge})`}} className='pdfContainer'>
+        <div className='pdfContainer'>
             <div className='pdfContainer-1'>
                 <div className='pdfTop'>
                     <div className='pdfTop-1'>
